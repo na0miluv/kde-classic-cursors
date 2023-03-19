@@ -37,9 +37,11 @@ fi
 
 function create {
 	cd "$SRC"
-	mkdir -p x1 x1_25 x1_5 x2
+	mkdir -p 24 48 72
 	cd "$SRC"/$1
-	find . -name "*.svg" -type f -exec sh -c 'inkscape -o "../x1/${0%.svg}.png" -w 32 -h 32 $0' {} \;
+	find . -name "*.svg" -type f -exec sh -c 'inkscape -o "../24/${0%.svg}.png" -w 32 -h 32 $0' {} \;
+	find . -name "*.svg" -type f -exec sh -c 'inkscape -o "../48/${0%.svg}.png" -w 64 -h 64 $0' {} \;
+	find . -name "*.svg" -type f -exec sh -c 'inkscape -o "../72/${0%.svg}.png" -w 96 -h 96 $0' {} \;
 
 	cd $SRC
 
